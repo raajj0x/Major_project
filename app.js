@@ -131,10 +131,10 @@ app.use((req,res,next)=>{
 
 
 
-
+// fdkfkdkfdfdjkj
 
 // Routes setup
-app.use("/listings", listingRouter); // All routes starting with "/listings" will use listings.js router
+app.use("/", listingRouter); // All routes starting with "/listings" will use listings.js router
 app.use("/listings/:id/reviews", reviewRouter); // Routes for handling reviews
 app.use("/",userRouter);
 
