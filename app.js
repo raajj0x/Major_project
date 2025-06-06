@@ -82,7 +82,6 @@ const sessionOptions = {
    resave: false,                         // Don't save session if unmodified
    saveUninitialized: true,              // Save new sessions even if empty
    cookie: {
-       expires: Date.now() + 7 * 24 * 60 * 60 * 1000,  // ERROR: Should be new Date() - expires needs Date object
        maxAge: 7 * 24 * 60 * 60 * 1000,                // Session expires in 7 days (milliseconds)
        httpOnly: true,                                   // Prevent client-side JS access to cookie
    },
@@ -145,9 +144,9 @@ app.use("/",userRouter);
 
 
 // Handle undefined routes (404 error page)
-app.all("*", (req, res, next) => {
-    next(new ExpressError(404, "Page not found")); // Handle all unrecognized routes
-});
+// app.all("*", (req, res, next) => {
+//     next(new ExpressError(404, "Page not found")); // Handle all unrecognized routes
+// });
 
 // Global error handling middleware
 app.use((err, req, res, next) => {
